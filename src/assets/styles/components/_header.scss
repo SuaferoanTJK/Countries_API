@@ -1,0 +1,30 @@
+@use '../base/variables' as v;
+@use '../base/mixins'as m;
+.header{
+    background-color: v.$white;
+    padding: 2.8rem 0;
+    text-align: center;
+    @include m.mobile { 
+        &-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    &-title{
+        font-size: 2.4rem;
+        padding: 0;
+        margin: 0;
+    }
+    &-mode{
+        padding-top: 1.5rem;
+        background-color: transparent;
+        border: none;
+        @include m.mobile { 
+            padding-top: unset;
+        }
+    }
+
+    
+
+}
