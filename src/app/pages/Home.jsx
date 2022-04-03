@@ -1,12 +1,26 @@
-import React from 'react'
-import Header from '../components/Header'
-const Home = () => {
-  return (
-    <div>
-       <Header/>
-       Dentro de Home
-    </div>
-  )
-}
+import React from "react";
+import Header from "../components/Header";
+import { useDispatch, useSelector } from "react-redux";
+import SearchFilter from "../components/filter/SearchFilter";
+import DropdownFilter from "../components/filter/DropdownFilter";
 
-export default Home
+const Home = () => {
+  const mode = useSelector((state) => state.darkMode);
+
+  return (
+    <>
+      <div className={mode ? "home home_bg-dark" : "home home_bg-light"}>
+        <Header />
+        <div className="container">
+          <div className="filters">
+            <SearchFilter />
+            <DropdownFilter />
+          </div>
+          <div className="cards"></div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Home;
