@@ -1,7 +1,16 @@
 @use "../base/variables" as v;
 @use "../base/mixins" as m;
 .header {
-  background-color: v.$white;
+  &_bg{
+   &-light{
+    background-color: v.$white;
+    color: v.$verydarkblueLM;
+   }
+   &-dark{
+    background-color: v.$darkblueDM;
+    color: v.$white;
+   }
+  }
   padding: 2.8rem 0;
   text-align: center;
   box-shadow: v.$darkgreyLM 0px 1px 1px -1px;

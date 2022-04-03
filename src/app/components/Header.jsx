@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-regular-svg-icons";
@@ -16,7 +17,7 @@ const Header = () => {
   };
 
   return (
-    <div className="header">
+    <div className={click ? "header header_bg-dark" : "header header_bg-light"}>
       <div className="header-container container">
         <div className="header-logo">
           <h1 className="header-title">Where in the world?</h1>
@@ -27,8 +28,8 @@ const Header = () => {
           ) : (
             <FontAwesomeIcon icon={faMoon} />
           )}
-          <button className="header-mode" onClick={() => changeClick()}>
-            {click ? "Dark Mode" : "Light Mode"}
+          <button className={click ? "header-mode text-white" : "header-mode text-dark"} onClick={() => changeClick()}>
+              {click ? "Dark Mode" : "Light Mode"}
           </button>
         </div>
       </div>
