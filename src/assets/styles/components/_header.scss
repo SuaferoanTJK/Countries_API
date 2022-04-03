@@ -24,5 +24,8 @@
     @include m.mobile {
       padding-top: unset;
     }
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

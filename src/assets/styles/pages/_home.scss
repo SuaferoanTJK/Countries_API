@@ -1,0 +1,12 @@
+@use "../base/variables" as v;
+
+.home {
+  &_bg {
+    &-light {
+      background-color: v.$backgroundLM;
+    }
+    &-dark {
+      background-color: v.$backgroundDM;
+    }
+  }
+}
