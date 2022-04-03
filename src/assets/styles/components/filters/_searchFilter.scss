@@ -1,0 +1,25 @@
+@use "../../base/variables" as v;
+
+.searchFilter{
+    position: relative;
+    &_btn{
+        position: absolute;
+        top: 35%;
+        left: 2.5rem;
+        color:v.$darkgreyLM;
+        &-dark{
+            color:v.$white;
+        }
+    }
+
+    &_input{
+        border: none;
+        width: 95%;
+        height: 5.6rem;
+        max-width: 48rem;
+        border-radius: 0.5rem;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        padding-left: 7rem;
+       
+    }
+}

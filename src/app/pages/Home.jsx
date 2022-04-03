@@ -1,7 +1,8 @@
 import React from "react";
 import Header from "../components/Header";
 import { useDispatch, useSelector } from "react-redux";
-import { changeMode } from "../redux/actions/countriesActions";
+import SearchFilter from "../components/filter/SearchFilter";
+import DropdownFilter from "../components/filter/DropdownFilter";
 
 const Home = () => {
   const mode = useSelector((state) => state.darkMode);
@@ -10,7 +11,11 @@ const Home = () => {
     <>
       <div className={mode ? "home home_bg-dark" : "home home_bg-light"}>
         <Header />
-        <div className="container">Dentro de Home</div>
+        <div className="container">
+          <SearchFilter/>
+          <DropdownFilter/>
+        </div>
+        
       </div>
     </>
   );

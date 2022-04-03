@@ -28,8 +28,7 @@
   }
   &-mode {
     padding-top: 1.5rem;
-    background-color: transparent;
-    border: none;
+
     @include m.mobile {
       padding-top: unset;
     }
