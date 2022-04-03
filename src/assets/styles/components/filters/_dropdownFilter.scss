@@ -1,0 +1,20 @@
+@use "../../base/variables" as v;
+
+.dropdownFilter {
+  &_select {
+    padding-left: 2.4rem;
+    width: 20rem;
+    height: 5.6rem;
+    border-radius: 0.5rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    &-light {
+      background-color: v.$white;
+      color: v.$darkblueDM;
+    }
+    &-dark {
+      box-shadow: unset;
+      background-color: v.$darkblueDM;
+      color: v.$white;
+    }
+  }
+}

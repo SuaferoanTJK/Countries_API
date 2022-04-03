@@ -30,6 +30,7 @@
     &-dark {
       box-shadow: unset;
       background-color: v.$darkblueDM;
+      color: v.$white;
       &::placeholder {
         color: v.$white;
       }
