@@ -12,10 +12,12 @@ const Home = () => {
       <div className={mode ? "home home_bg-dark" : "home home_bg-light"}>
         <Header />
         <div className="container">
-          <SearchFilter/>
-          <DropdownFilter/>
+          <div className="filters">
+            <SearchFilter />
+            <DropdownFilter />
+          </div>
+          <div className="cards"></div>
         </div>
-        
       </div>
     </>
   );
