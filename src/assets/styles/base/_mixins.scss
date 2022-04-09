@@ -1,22 +1,27 @@
-@use 'variables' as v;
+@use "variables" as v;
 
-@mixin mobile{
-    @media (min-width:v.$mobile) {
-        @content;
-    }
+@mixin tabletMed {
+  @media (min-width: v.$tabletMed) {
+    @content;
+  }
 }
-@mixin tablet{
-    @media (min-width:v.$tablet) {
-        @content;
-    }
+@mixin tablet {
+  @media (min-width: v.$tablet) {
+    @content;
+  }
 }
-@mixin desktop{
-    @media (min-width:v.$desktop) {
-        @content;
-    }
+@mixin desktopMed {
+  @media (min-width: v.$desktopMed) {
+    @content;
+  }
 }
-@mixin grid($columnas, $espaciado){
-    display: grid;
-    grid-template-columns: repeat($columnas,1fr);
-    gap: $espaciado;
+@mixin desktopBig {
+  @media (min-width: v.$desktopBig) {
+    @content;
+  }
+}
+@mixin grid($columnas, $espaciado) {
+  display: grid;
+  grid-template-columns: repeat($columnas, 1fr);
+  gap: $espaciado;
 }
