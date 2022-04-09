@@ -7,8 +7,20 @@
   background-color: v.$white;
   border-radius: 0.5rem;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  overflow: hidden;
+
+  &_bg-dark {
+    background-color: v.$darkblueDM;
+    box-shadow: unset;
+    color: v.$white;
+  }
   &_img {
     height: 16rem;
+    img {
+      object-fit: cover;
+      height: 16rem;
+      width: 100%;
+    }
   }
   &_info {
     padding: 2.4rem;

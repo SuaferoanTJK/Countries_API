@@ -1,4 +1,4 @@
-import { CHANGE_MODE } from "../types/countriesTypes";
+import { CHANGE_MODE, OBTAIN_ALL_COUNTRIES } from "../types/countriesTypes";
 
 const initialState = {
   darkMode: false,
@@ -11,6 +11,11 @@ export const countriesAPI = (state = initialState, action) => {
       return {
         ...state,
         darkMode: action.payload,
+      };
+    case OBTAIN_ALL_COUNTRIES:
+      return {
+        ...state,
+        countries: action.payload,
       };
     default:
       return state;
