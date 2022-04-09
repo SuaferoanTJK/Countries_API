@@ -29,5 +29,17 @@
   &_container {
     @include m.grid(1, 4rem);
     justify-items: center;
+    @include m.tabletMed {
+      @include m.grid(2, 4rem);
+    }
+    @include m.tablet {
+      @include m.grid(3, 4rem);
+    }
+    @include m.desktopMed {
+      @include m.grid(4, 4rem);
+    }
+    @include m.desktopBig {
+      @include m.grid(5, 4rem);
+    }
   }
 }

@@ -14,7 +14,7 @@
   padding: 2.8rem 0;
   text-align: center;
   box-shadow: v.$darkgreyLM 0px 1px 1px -1px;
-  @include m.mobile {
+  @include m.tabletMed {
     &-container {
       display: flex;
       justify-content: space-between;
@@ -28,7 +28,7 @@
   }
   &-mode {
     padding-top: 1.5rem;
-    @include m.mobile {
+    @include m.tabletMed {
       padding-top: unset;
     }
     &:hover {
