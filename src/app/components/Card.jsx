@@ -9,13 +9,12 @@ const Card = ({ image, name, population, region, capital }) => {
         <img src={image} alt="Flag Image" />
       </div>
       <div className="card_info">
-        <p className="card_title"> {name} </p>
+        <p className="card_title"> {name}</p>
         <p className="card_text">
           <span>Population:</span> {population}
         </p>
         <p className="card_text">
-          <span>Region:</span>
-          {region}
+          <span>Region:</span> {region}
         </p>
         <p className="card_text">
           <span>Capital:</span> {capital}
