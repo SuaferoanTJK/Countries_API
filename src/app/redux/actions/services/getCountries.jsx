@@ -1,19 +1,29 @@
 import axios from "axios";
+import { Constants } from "../../../Constants";
 
-const getCountries = async () => {
+const getCountries = async (param = "all", word) => {
   let countries = [];
+  let url = null;
+  if (param === "all") {
+    url = Constants.API_ALL;
+  } else if (param === "name") {
+    url = `${Constants.API_NAME}${word}?fullText=true`;
+  } else if (param === "region") {
+    url = `${Constants.API_REGION}${word}`;
+  }
+
   await axios
-    .get("https://restcountries.com/v2/all")
+    .get(url)
     .then((response) => {
       if (response.status === 200) {
         const data = response.data;
         data.forEach((country) => {
           countries.push({
-            image: country.flag,
-            name: country.name,
+            image: country.flags.svg,
+            name: country.name.common,
             population: country.population,
             region: country.region,
-            capital: country.capital,
+            capital: country.capital?.[0] || "-",
           });
         });
       } else {
