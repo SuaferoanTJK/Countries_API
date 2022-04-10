@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import Header from "../components/Header";
 import { useDispatch, useSelector } from "react-redux";
+import Header from "../components/Header";
 import SearchFilter from "../components/filter/SearchFilter";
 import DropdownFilter from "../components/filter/DropdownFilter";
 import Card from "../components/Card";
@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <>
-      <div className={mode ? "home home_bg-dark" : "home home_bg-light"}>
+      <div className={mode ? "home home_bg-dark" : "home home_bg"}>
         <Header />
         <div className="container">
           <div className="filters">
@@ -29,11 +29,7 @@ const Home = () => {
             <div className="cards_container">
               {countries.length !== 0
                 ? countries.map((country, id) => (
-                    <div
-                      className="card"
-                      key={id}
-                      onClick={(e) => console.log(country.name)}
-                    >
+                    <div key={id} onClick={(e) => console.log(country.name)}>
                       <Card
                         key={id}
                         name={country.name}

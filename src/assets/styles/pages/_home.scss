@@ -3,9 +3,7 @@
 
 .home {
   &_bg {
-    &-light {
-      background-color: v.$backgroundLM;
-    }
+    background-color: v.$backgroundLM;
     &-dark {
       background-color: v.$backgroundDM;
     }
@@ -40,11 +38,5 @@
     @include m.desktopBig {
       @include m.grid(5, 4rem);
     }
-  }
-}
-
-.card {
-  &:hover {
-    cursor: pointer;
   }
 }
