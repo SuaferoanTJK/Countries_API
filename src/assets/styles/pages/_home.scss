@@ -25,7 +25,6 @@
 .cards {
   min-height: 80vh;
   padding-bottom: 4.7rem;
-
   &_container {
     @include m.grid(1, 4rem);
     justify-items: center;
@@ -41,5 +40,11 @@
     @include m.desktopBig {
       @include m.grid(5, 4rem);
     }
+  }
+}
+
+.card {
+  &:hover {
+    cursor: pointer;
   }
 }

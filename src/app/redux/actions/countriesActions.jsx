@@ -1,4 +1,4 @@
-import { CHANGE_MODE, OBTAIN_ALL_COUNTRIES } from "../types/countriesTypes";
+import { CHANGE_MODE, OBTAIN_COUNTRIES } from "../types/countriesTypes";
 import getCountries from "./services/getCountries";
 
 export const changeMode = (mode) => {
@@ -9,11 +9,12 @@ export const changeMode = (mode) => {
     });
   };
 };
-export const obtainCountries = () => {
+
+export const obtainCountries = (param, word) => {
   return async (dispatch) => {
-    const countries = await getCountries();
+    const countries = await getCountries(param, word);
     dispatch({
-      type: OBTAIN_ALL_COUNTRIES,
+      type: OBTAIN_COUNTRIES,
       payload: countries,
     });
   };
