@@ -1,0 +1,114 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.single {
+  min-height: 80vh;
+  padding-bottom: 4.7rem;
+  &_btn {
+    margin: 4rem 0 6.4rem 0;
+    min-width: 10.4rem;
+    max-width: 13.6rem;
+    padding: 1.3rem 0;
+    text-align: center;
+    background-color: v.$white;
+    border-radius: 0.5rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    @include m.tablet {
+      margin: 8rem 0;
+    }
+    span {
+      padding-left: 1.2rem;
+    }
+    &-dark {
+      background-color: v.$darkblueDM;
+      box-shadow: unset;
+      button,
+      span {
+        color: v.$white;
+      }
+    }
+  }
+  &_grid {
+    @include m.grid(1, 4.5rem);
+    @include m.tablet {
+      @include m.grid(2, 6.8rem);
+    }
+    &-dark {
+      color: v.$white;
+    }
+  }
+  &_img {
+    img {
+      height: 22.9rem;
+      width: 100%;
+      object-fit: contain;
+      border-radius: 0.5rem;
+      @include m.tablet {
+        height: 40.1rem;
+      }
+    }
+    @include m.tablet {
+      justify-content: flex-start;
+    }
+  }
+  &_title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 2.8rem;
+    @include m.tablet {
+      font-size: 3.2rem;
+      margin-top: 4.4rem;
+    }
+  }
+  &_text {
+    font-size: 1.4rem;
+    span {
+      font-weight: 600;
+    }
+    @include m.tablet {
+      font-size: 1.6rem;
+    }
+  }
+  &_dataGrid {
+    margin-bottom: 3.4rem;
+    @include m.grid(1, 4.5rem);
+    @include m.tabletMed {
+      @include m.grid(2, 1rem);
+    }
+  }
+  &_extraInfo {
+    display: flex;
+    flex-direction: column;
+    @include m.tablet {
+      flex-direction: row;
+      column-gap: 1.5rem;
+    }
+    p {
+      font-weight: 600;
+      font-size: 1.6rem;
+    }
+  }
+  &_borderCountries {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  &_country {
+    font-size: 1.2rem;
+    width: 9.6rem;
+    padding: 0.8rem 0;
+    text-align: center;
+    background-color: v.$white;
+    border-radius: 0.3rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    @include m.tablet {
+      font-size: 1.4rem;
+    }
+    &-dark {
+      background-color: v.$darkblueDM;
+      box-shadow: unset;
+    }
+  }
+}
