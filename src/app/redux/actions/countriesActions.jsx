@@ -1,4 +1,8 @@
-import { CHANGE_MODE, OBTAIN_COUNTRIES } from "../types/countriesTypes";
+import {
+  CHANGE_MODE,
+  OBTAIN_COUNTRIES,
+  OBTAIN_COUNTRY,
+} from "../types/countriesTypes";
 import getCountries from "./services/getCountries";
 
 export const changeMode = (mode) => {
@@ -17,5 +21,12 @@ export const obtainCountries = (param, word) => {
       type: OBTAIN_COUNTRIES,
       payload: countries,
     });
+  };
+};
+
+export const obtainCountry = (payload) => {
+  return {
+    type: OBTAIN_COUNTRY,
+    payload,
   };
 };

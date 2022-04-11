@@ -1,8 +1,13 @@
-import { CHANGE_MODE, OBTAIN_COUNTRIES } from "../types/countriesTypes";
+import {
+  CHANGE_MODE,
+  OBTAIN_COUNTRIES,
+  OBTAIN_COUNTRY,
+} from "../types/countriesTypes";
 
 const initialState = {
   darkMode: false,
   countries: [],
+  country: [],
 };
 
 export const countriesAPI = (state = initialState, action) => {
@@ -17,6 +22,12 @@ export const countriesAPI = (state = initialState, action) => {
         ...state,
         countries: action.payload,
       };
+    case OBTAIN_COUNTRY:
+      return {
+        ...state,
+        country: action.payload,
+      };
+
     default:
       return state;
   }

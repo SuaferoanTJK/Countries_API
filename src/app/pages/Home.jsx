@@ -1,12 +1,17 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import SearchFilter from "../components/filter/SearchFilter";
 import DropdownFilter from "../components/filter/DropdownFilter";
 import Card from "../components/Card";
-import { obtainCountries } from "../redux/actions/countriesActions";
+import {
+  obtainCountries,
+  obtainCountry,
+} from "../redux/actions/countriesActions";
 
 const Home = () => {
+  let navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,7 +34,13 @@ const Home = () => {
             <div className="cards_container">
               {countries.length !== 0
                 ? countries.map((country, id) => (
-                    <div key={id} onClick={(e) => console.log(country.name)}>
+                    <div
+                      key={id}
+                      onClick={() => {
+                        dispatch(obtainCountry(country));
+                        navigate("/country");
+                      }}
+                    >
                       <Card
                         key={id}
                         name={country.name}
