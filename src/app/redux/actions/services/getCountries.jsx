@@ -24,10 +24,16 @@ const getCountries = async (param = "all", word) => {
             population: country.population,
             region: country.region,
             capital: country.capital?.[0] || "-",
+            nativeName: country.name.nativeName,
+            subregion: country.subregion,
+            topLevelDomain: country?.tld || "-",
+            currencies: country.currencies,
+            languages: country.languages,
+            borders: country.borders,
           });
         });
       } else {
-        console.log("Status incorrecto");
+        console.log("Incorrect Status");
       }
     })
     .catch((e) => {

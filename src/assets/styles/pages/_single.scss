@@ -5,6 +5,7 @@
   min-height: 80vh;
   padding-bottom: 4.7rem;
   &_btn {
+    cursor: pointer;
     margin: 4rem 0 6.4rem 0;
     min-width: 10.4rem;
     max-width: 13.6rem;
@@ -17,6 +18,7 @@
       margin: 8rem 0;
     }
     span {
+      cursor: pointer;
       padding-left: 1.2rem;
     }
     &-dark {
