@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
-import SearchFilter from "../components/filter/SearchFilter";
-import DropdownFilter from "../components/filter/DropdownFilter";
+import SearchFilter from "../components/filter/searchFilter";
+import DropdownFilter from "../components/filter/dropdownFilter";
 import Card from "../components/Card";
 import {
   obtainCountries,
