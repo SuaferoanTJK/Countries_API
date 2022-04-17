@@ -7,7 +7,7 @@ const getCountries = async (param = "all", word) => {
   if (param === "all") {
     url = Constants.API_ALL;
   } else if (param === "name") {
-    url = `${Constants.API_NAME}${word}?fullText=true`;
+    url = `${Constants.API_NAME}${word}`;
   } else if (param === "region") {
     url = `${Constants.API_REGION}${word}`;
   }
@@ -37,7 +37,7 @@ const getCountries = async (param = "all", word) => {
       }
     })
     .catch((e) => {
-      console.log("Fallo");
+      console.log("404 Error");
     });
   return countries;
 };
