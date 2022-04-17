@@ -4,7 +4,7 @@ import { faMoon } from "@fortawesome/free-regular-svg-icons";
 import { faMoon as faMoonSolid } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { changeMode } from "../redux/actions/countriesActions";
+import { changeMode, cleanCountry } from "../redux/actions/countriesActions";
 
 const Header = () => {
   let navigate = useNavigate();
@@ -19,7 +19,13 @@ const Header = () => {
     <div className={mode ? "header header_bg-dark" : "header header_bg-light"}>
       <div className="header-container container">
         <div className="header-logo">
-          <h1 className="header-title" onClick={() => navigate("/")}>
+          <h1
+            className="header-title"
+            onClick={() => {
+              navigate("/");
+              dispatch(cleanCountry());
+            }}
+          >
             Where in the world?
           </h1>
         </div>

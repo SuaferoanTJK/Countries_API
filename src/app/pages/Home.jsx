@@ -14,12 +14,16 @@ const Home = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(obtainCountries());
-  }, []);
-
   const mode = useSelector((state) => state.darkMode);
   const countries = useSelector((state) => state.countries);
+  const filter = useSelector((state) => state.filter);
+  const countriesArray = countries.map((country) => country);
+
+  useEffect(() => {
+    if (countriesArray.length === 0) {
+      dispatch(obtainCountries());
+    }
+  }, []);
 
   return (
     <>
@@ -32,7 +36,7 @@ const Home = () => {
           </div>
           <div className="cards">
             <div className="cards_container">
-              {countries.length !== 0
+              {filter.length === 0
                 ? countries.map((country, id) => (
                     <div
                       key={id}
@@ -51,7 +55,24 @@ const Home = () => {
                       />
                     </div>
                   ))
-                : "Not countries found"}
+                : filter.map((country, id) => (
+                    <div
+                      key={id}
+                      onClick={() => {
+                        dispatch(obtainCountry(country));
+                        navigate("/country");
+                      }}
+                    >
+                      <Card
+                        key={id}
+                        name={country.name}
+                        image={country.image}
+                        population={country.population}
+                        region={country.region}
+                        capital={country.capital}
+                      />
+                    </div>
+                  ))}
             </div>
           </div>
         </div>

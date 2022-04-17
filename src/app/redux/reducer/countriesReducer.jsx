@@ -1,13 +1,16 @@
 import {
   CHANGE_MODE,
   OBTAIN_COUNTRIES,
-  OBTAIN_COUNTRY,
+  FILTER_COUNTRIES,
+  INFO_COUNTRY,
+  CLEAN_INFO_COUNTRY,
 } from "../types/countriesTypes";
 
 const initialState = {
   darkMode: false,
   countries: [],
-  country: [],
+  filter: [],
+  country: {},
 };
 
 export const countriesAPI = (state = initialState, action) => {
@@ -22,12 +25,22 @@ export const countriesAPI = (state = initialState, action) => {
         ...state,
         countries: action.payload,
       };
-    case OBTAIN_COUNTRY:
+    case FILTER_COUNTRIES:
       return {
         ...state,
+        filter: action.payload,
+      };
+    case INFO_COUNTRY:
+      return {
+        ...state,
+        filter: [],
         country: action.payload,
       };
-
+    case CLEAN_INFO_COUNTRY:
+      return {
+        ...state,
+        country: {},
+      };
     default:
       return state;
   }

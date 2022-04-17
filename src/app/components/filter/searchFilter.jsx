@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { obtainCountries } from "../../redux/actions/countriesActions";
+import { filterCountry } from "../../redux/actions/countriesActions";
 
 const searchFilter = () => {
   const dispatch = useDispatch();
@@ -18,7 +18,11 @@ const searchFilter = () => {
             : "searchFilter_btn searchFilter_btn-light"
         }
         onClick={() => {
-          dispatch(obtainCountries("name", name));
+          if (name === "") {
+            dispatch(filterCountry("all"));
+          } else {
+            dispatch(filterCountry("name", name));
+          }
         }}
       >
         <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -36,7 +40,7 @@ const searchFilter = () => {
         }}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
-            dispatch(obtainCountries("name", name));
+            dispatch(filterCountry("name", name));
           }
         }}
       />

@@ -1,12 +1,16 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { obtainCountries } from "../../redux/actions/countriesActions";
+import {
+  filterCountry,
+  obtainCountries,
+} from "../../redux/actions/countriesActions";
 
 const dropdownFilter = () => {
   const dispatch = useDispatch();
   const mode = useSelector((state) => state.darkMode);
 
   const regions = [
+    { value: "", label: "All" },
     { value: "africa", label: "Africa" },
     { value: "americas", label: "América" },
     { value: "asia", label: "Asia" },
@@ -24,7 +28,11 @@ const dropdownFilter = () => {
         }
         defaultValue=""
         onChange={(region) => {
-          dispatch(obtainCountries("region", region.target.value));
+          if (region.target.value === "") {
+            dispatch(filterCountry());
+          } else {
+            dispatch(filterCountry("region", region.target.value));
+          }
         }}
       >
         <option value="" disabled hidden>
